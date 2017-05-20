@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Spiner in fragment android cities</string>
+    <string-array name="cities">
+        <item>Москва</item>
+        <item>Тула</item>
+        <item>Орёл</item>
+        <item>Курск</item>
+    </string-array>
+</resources>
