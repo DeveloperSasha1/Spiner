@@ -45,7 +45,6 @@ public class FragmentSpiner extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view,
                                        int position, long id) {
-                // показываем позиция нажатого элемента
                 Toast.makeText(getActivity(), "Position = " + position, Toast.LENGTH_SHORT).show();
             }
 
@@ -59,10 +58,16 @@ public class FragmentSpiner extends Fragment {
                 FragmentManager fragmentManager = getFragmentManager();
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
 
-                FragmentWeather fragment = new FragmentWeather();
-                fragmentTransaction.replace(R.id.container, fragment);
+                Bundle bundle = new Bundle();
+                bundle.putString("edttext", "From Activity");
+                FragmentWeather fragobj = new FragmentWeather();
+                fragobj.setArguments(bundle);
+
+                fragobj.setArguments(bundle);
+                fragmentTransaction.replace(R.id.container, fragobj);
                 fragmentTransaction.commit();
             }
+
 
         });
         return v;
